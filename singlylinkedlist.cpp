@@ -43,31 +43,36 @@ public:
 
     // Insert a new element at a specific position in the singly linked list
     void insertAtPosition(T val, int position) {
-        if (position <= 0) {
-            std::cout << "Invalid position. Position can't be negative value." << std::endl;
+    if (position <= 0) {
+        std::cout << "Invalid position. Position can't be a negative value." << std::endl;
+        return;
+    }
+
+    Node<T>* newNode = new Node<T>(val);
+    
+    if (position == 1) {
+        newNode->nodePtr = listHead;
+        listHead = newNode;
+    } else {
+        Node<T>* previous = listHead;
+        int count = 1;
+        while (previous && count < position - 1) {
+            previous = previous->nodePtr;
+            count++;
+        }
+        
+        if (!previous) {
+            std::cout << "Invalid position, as it exceeds the size of the list." << std::endl;
+            delete newNode;
             return;
         }
-
-        Node<T>* newNode = new Node<T>(val);
-        if (position == 1) {
-            newNode->nodePtr = listHead; 
-            listHead = newNode; 
-        } else {
-            Node<T>* temp = listHead; 
-            int count = 1;
-            while (temp && count < position - 1) {
-                temp = temp->nodePtr; 
-                count++;
-            }
-            if (!temp) {
-                std::cout << "Invalid position as, Position exceeds  size of the list." << std::endl;
-                delete newNode;
-                return;
-            }
-            newNode->nodePtr = temp->nodePtr; 
-            temp->nodePtr = newNode; 
-        }
+        
+        Node<T>* current = previous->nodePtr;
+        newNode->nodePtr = current;
+        previous->nodePtr = newNode;
     }
+}
+
 
     // Delete the first occurrence of an element from the singly linked list
     void deleteElement(T val) {
