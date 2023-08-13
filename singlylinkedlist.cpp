@@ -114,66 +114,66 @@ public:
     }
 };
 
-int main() {
-    SinglyLinkedList<int> myList;
-
-    int choice;
-    do {
-        std::cout << "Select choice:" << std::endl;
-        std::cout << "1. Insert at the end" << std::endl;
-        std::cout << "2. Insert at the start" << std::endl;
-        std::cout << "3. Insert at a specific position" << std::endl;
-        std::cout << "4. Delete an element" << std::endl;
-        std::cout << "5. View the list" << std::endl;
-        std::cout << "6. Exit" << std::endl;
-        std::cout << "choice: ";
-        std::cin >> choice;
-
-        switch (choice) {
-            case 1: {
-                int val;
-                std::cout << "Enter the value to insert at the end of list: ";
-                std::cin >> val;
-                myList.insertEnd(val);
-                break;
-            }
-            case 2: {
-                int val;
-                std::cout << "Enter the value to insert at the start of list: ";
-                std::cin >> val;
-                myList.insertStart(val);
-                break;
-            }
-            case 3: {
-                int val, position;
-                std::cout << "Enter the value to insert in list: ";
-                std::cin >> val;
-                std::cout << "Enter the position where you want ot insert: ";
-                std::cin >> position;
-                myList.insertAtPosition(val, position);
-                break;
-            }
-            case 4: {
-                int val;
-                std::cout << "Enter the value to delete: ";
-                std::cin >> val;
-                myList.deleteElement(val);
-                break;
-            }
-            case 5: {
-                myList.show();
-                break;
-            }
-            case 6: {
-                std::cout << "Over..." << std::endl;
-                break;
-            }
-            default:
-                std::cout << "Invalid choice. Please try again." << std::endl;
-        }
-    } while (choice != 6);
-
-    return 0;
-}
-
-
+//int main() {
+//    SinglyLinkedList<int> myList;
+//
+//    int choice;
+//    do {
+//        std::cout << "Select choice:" << std::endl;
+//        std::cout << "1. Insert at the end" << std::endl;
+//        std::cout << "2. Insert at the start" << std::endl;
+//        std::cout << "3. Insert at a specific position" << std::endl;
+//        std::cout << "4. Delete an element" << std::endl;
+//        std::cout << "5. View the list" << std::endl;
+//        std::cout << "6. Exit" << std::endl;
+//        std::cout << "choice: ";
+//        std::cin >> choice;
+//
+//        switch (choice) {
+//            case 1: {
+//                int val;
+//                std::cout << "Enter the value to insert at the end of list: ";
+//                std::cin >> val;
+//                myList.insertEnd(val);
+//                break;
+//            }
+//            case 2: {
+//                int val;
+//                std::cout << "Enter the value to insert at the start of list: ";
+//                std::cin >> val;
+//                myList.insertStart(val);
+//                break;
+//            }
+//            case 3: {
+//                int val, position;
+//                std::cout << "Enter the value to insert in list: ";
+//                std::cin >> val;
+//                std::cout << "Enter the position where you want ot insert: ";
+//                std::cin >> position;
+//                myList.insertAtPosition(val, position);
+//                break;
+//            }
+//            case 4: {
+//                int val;
+//                std::cout << "Enter the value to delete: ";
+//                std::cin >> val;
+//                myList.deleteElement(val);
+//                break;
+//            }
+//            case 5: {
+//                myList.show();
+//                break;
+//            }
+//            case 6: {
+//                std::cout << "Over..." << std::endl;
+//                break;
+//            }
+//            default:
+//                std::cout << "Invalid choice. Please try again." << std::endl;
+//        }
+//    } while (choice != 6);
+//
+//    return 0;
+//}
+//
+//
