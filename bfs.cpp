@@ -16,14 +16,14 @@ public:
         adjMatrix.setEdge(row, col, weight);
     }
 
-    void dfs(int startVertex, bool visited[]) {
+    void bfs(int startVertex, bool visited[]) {
         visited[startVertex] = true;
         cout << startVertex << " ";
 
         for (int i = 0; i < adjMatrix.getSize(); i++) {
             T edgeWeight = adjMatrix.getEdge(startVertex, i);
             if (!visited[i] && edgeWeight != T()) {
-                dfs(i, visited);
+                bfs(i, visited);
             }
         }
     }
@@ -36,7 +36,7 @@ public:
 
         for (int i = 0; i < adjMatrix.getSize(); i++) {
             if (!visited[i]) {
-                dfs(i, visited);
+                bfs(i, visited);
             }
         }
 
@@ -63,10 +63,10 @@ int main() {
     }
 
     int startVertex;
-    cout << "Enter the starting vertex for DFS: ";
+    cout << "Enter the starting vertex for BFS: ";
     cin >> startVertex;
 
-    cout << "DFS traversal starting from vertex " << startVertex << ": ";
+    cout << "BFS traversal starting from vertex " << startVertex << ": ";
     graph.dfsTraversal();
     cout << endl;
 
