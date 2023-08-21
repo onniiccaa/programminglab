@@ -46,6 +46,7 @@ public:
     }
 };
 
+/*
 int main() {
     int size;
     cout << "Enter the size of the matrix: ";
@@ -53,23 +54,41 @@ int main() {
 
     AdjacencyMatrix<int> adjMatrix(size);
 
+    int choice;
     int row, col;
     double weight;
     while (true) {
-        cout << "Enter the row, column, and weight (-1 to exit): ";
-        cin >> row >> col >> weight;
+        cout << "1. Set edge\n";
+        cout << "2. Display matrix\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-        if (row == -1 || col == -1 || weight == -1) {
-            break;
+        switch (choice) {
+            case 1:
+                cout << "Enter row, column, and weight: ";
+                cin >> row >> col >> weight;
+                if (row >= 0 && row < size && col >= 0 && col < size) {
+                    adjMatrix.setEdge(row, col, weight);
+                } else {
+                    cout << "Invalid row or column!\n";
+                }
+                break;
+            case 2:
+                cout << "Adjacency Matrix:\n";
+                adjMatrix.display();
+                break;
+            case 3:
+                cout << "Exiting program.\n";
+                return 0;
+            default:
+                cout << "Invalid choice!\n";
         }
-
-        adjMatrix.setEdge(row, col, weight);
     }
-
-    cout << "Adjacency Matrix:" << endl;
-    adjMatrix.display();
 
     return 0;
 }
+*/
+
 
 
